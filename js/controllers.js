@@ -1,7 +1,7 @@
-app.controller('bookController', ['bookService', 'postBookService', 'deleteBookService', bookController]);
+app.controller('bookController', ['bookService', 'postBookService', 'deleteBookService', 'updateBookService', bookController]);
 // Change Me
 
-function bookController(bookService, postBookService, deleteBookService) {
+function bookController(bookService, postBookService, deleteBookService, updateBookService) {
   var vm = this;
   bookService().then(function(response) {
     vm.title=response;
@@ -27,6 +27,13 @@ function bookController(bookService, postBookService, deleteBookService) {
     });
   };
 
-  vm.
+  vm.updateBook = function(bookId, bookObj) {
+    updateBookService(bookId, bookObj).then(function(response) {
+      console.log(response);
+      bookService().then(function(resp) {
+        vm.title=resp;
+      });
+    });
+  };
 
 }
