@@ -1,1 +1,6 @@
-<h4 ng-repeat='book in BC.title.data'>{{book}}</h4>
+<!-- <h4 ng-repeat='book in BC.title.data'>{{book}}</h4> -->
+<div class='book' ng-repeat='book in BC.title.data'>
+  <img src='{{book.imageUrl}}'>
+  <h5>{{book.bookName}}</h5>
+  <h5>{{book.bookDescription}}</h5>
+</div>
