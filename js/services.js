@@ -18,3 +18,16 @@ function postBookService($http, $q) {
     });
   };
 }
+
+app.service('deleteBookService', ['$http', '$q', deleteBookService]);
+
+function deleteBookService($http, $q) {
+  return function(bookId) {
+    return $q(function(resolve, reject) {
+      $http.delete('//localhost:3000/api/books/' + bookId)
+      .then(function(response) {
+        resolve(response);
+      });
+    });
+  };
+}
