@@ -1,7 +1,7 @@
-app.directive('listBooks', listBooks);
+app.directive('listBooks', [listBooks]);
 
 function listBooks() {
   return {
-    templateUrl: 'list.html'
+    templateUrl: '../views/list.html'
   };
 }

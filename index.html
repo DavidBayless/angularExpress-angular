@@ -27,7 +27,19 @@
           <li>This is a navbar because</li>
         </ul>
       </div>
-    </div>  
+    </div>
+    <div class='row'>
+      <div class='col-md-6'>
+        <form>
+          <input type='text' placeholder="book name" name='name' ng-model='book.name'>
+          <input type='text' placeholder="author" name='author' ng-model='book.author'>
+          <textarea placeholder="description" name='description' ng-model='book.description'></textarea>
+          <input type='text' placeholder="image url" name='image' ng-model='book.image'>
+          <input type='button' ng-click='BC.postBook(book)'>
+        </form>
+      </div>
+    </div>
+    <list-books></list-books>
   </div>
 </body>
 </html>
