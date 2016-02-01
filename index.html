@@ -38,6 +38,12 @@
           <input type='button' ng-click='BC.postBook(book)'>
         </form>
       </div>
+      <div class='col-md-3'>
+        <form>
+          <input type='text' placeholder="id" name='id' ng-model='id'>
+          <input type='button' ng-click='BC.deleteBook(id)'>
+        </form>
+      </div>
     </div>
     <list-books></list-books>
   </div>

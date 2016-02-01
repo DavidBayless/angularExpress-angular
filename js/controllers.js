@@ -3,17 +3,17 @@ app.controller('bookController', ['bookService', 'postBookService', bookControll
 
 function bookController(bookService, postBookService) {
   var vm = this;
-  bookService.then(function(response) {
+  bookService().then(function(response) {
     vm.title=response;
     console.log(response);
   });
 
   vm.postBook = function(newBook) {
     postBookService(newBook).then(function(response) {
-      // vm.title=response;
-      bookService.then(function(response) {
-        vm.title=response;
-        console.log(response);
+      console.log(response);
+      bookService().then(function(resp) {
+        vm.title=resp;
+        console.log(resp);
       });
     });
   };
