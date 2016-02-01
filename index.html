@@ -44,6 +44,16 @@
           <input type='button' ng-click='BC.deleteBook(id)'>
         </form>
       </div>
+      <div class='col-md-3'>
+        <form>
+          <input type='text' placeholder="id" name='id' ng-model='updateId'>
+          <input type='text' placeholder="book name" name='name' ng-model='bookUpdate.name'>
+          <input type='text' placeholder="author" name='author' ng-model='bookUpdate.author'>
+          <textarea placeholder="description" name='description' ng-model='bookUpdate.description'></textarea>
+          <input type='text' placeholder="image url" name='image' ng-model='bookUpdate.image'>
+          <input type='button' ng-click='BC.updateBook(updateId, bookUpdate)'
+        </form>
+      </div>
     </div>
     <list-books></list-books>
   </div>

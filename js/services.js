@@ -31,3 +31,16 @@ function deleteBookService($http, $q) {
     });
   };
 }
+
+app.service('updateBookService', ['$http', '$q', updateBookService]);
+
+function updateBookService($http, $q) {
+  return function(bookId, newData) {
+    return $q(function(resolve, reject) {
+      $http.put('//localhost:3000/api/books/' + bookId, newData)
+      .then(function(response) {
+        resolve(response);
+      });
+    });
+  };
+}

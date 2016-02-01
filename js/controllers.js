@@ -27,4 +27,6 @@ function bookController(bookService, postBookService, deleteBookService) {
     });
   };
 
+  vm.
+
 }
